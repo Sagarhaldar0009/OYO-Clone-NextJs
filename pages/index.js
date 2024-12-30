@@ -10,11 +10,11 @@ import Footer from '@/components/Footer'
 const Home = () => {
   return (
     <div>
-      {/* <Head>
+      <Head>
         <title>
           OYO - Clone : India`s Best Online Hotel Booking Site For Sanitized Stay.
         </title>
-      </Head> */}
+      </Head>
       <Header1 />
       <Header2/>
       <Header3/>
