@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Block from './Block'
+import Link from 'next/link'
 
 const Header1 = () => {
   return (
@@ -21,7 +22,7 @@ const Header1 = () => {
         />
         <Block title={"List your property"} para={"Start earning in 30 min."} />
         <Block title={"987654321"} para={"Call us to book now."} />
-        {/* <div className="flex items-center px-3 ">
+        <div className="flex items-center px-3 ">
           <Image
             src={"/demo.svg"}
             alt="demo"
@@ -29,19 +30,19 @@ const Header1 = () => {
             height={200}
             className=" w-10 h-10 rounded-full mr-5"
           />
-          {auth ? (
-            <h3
+          {/* {auth ? ( */}
+            {/* <h3
               className=" font-bold cursor-pointer"
               onClick={handleLogout}
             >
               Logout
-            </h3>
-          ) : (
+            </h3> */}
+          {/* ) : ( */}
             <Link href={"/login"} className=" font-bold">
               Login / Signup
             </Link>
-          )}
-        </div> */}
+          {/* )} */}
+        </div>
       </div>
     </div>
   )
