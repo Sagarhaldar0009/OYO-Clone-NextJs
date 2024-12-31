@@ -21,17 +21,7 @@ const Header3 = () => {
               setCity(e.target.value);
             }}
           />
-          {/* <input
-            type="date"
-            placeholder="Search..."
-            className="  h-16 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-1"
-          />
-          <input
-            type="date"
-            placeholder="Search..."
-            className=" h-16 outline-none px-3 text-lg col-span-1"
-          /> */}
-
+          
           <button
             type="submit"
             className=" h-16 px-3 py-2 w-72 bg-green-400 hover:cursor-pointer hover:bg-green-600 text-white text-xl"
