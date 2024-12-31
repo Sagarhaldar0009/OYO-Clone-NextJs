@@ -7,16 +7,17 @@ const connectDB = async () => {
 
   if (cachedDB) {
     return cachedDB;
-  }else{
-     const newDB = await mongoose.connect(URI, {
-       useNewUrlParser: true,
-       useUnifiedTopology: true,
-     });
-     console.log("DB Connected");
-     cachedDB = newDB;
-     return newDB;
+  } else {
+    try {
+      const newDB = await mongoose.connect(URI);
+      console.log("DB Connected");
+      cachedDB = newDB;
+      return newDB;
+    } catch (error) {
+      console.error("DB Connection Error:", error);
+      throw error;
+    }
   }
- 
 };
 
 export default connectDB;

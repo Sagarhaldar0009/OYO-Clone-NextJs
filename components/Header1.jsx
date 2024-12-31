@@ -27,13 +27,15 @@ const Header1 = () => {
   };
   return (
     <div className=" flex justify-between border-b-2 border-gray-300 items-center h-24 px-10">
-      <Image
-        src={"/logo.png"}
-        alt="logo"
-        width={200}
-        height={200}
-        className=" w-28 h-28 "
-      />
+      <Link href="/" passHref>
+        <Image
+          src="/logo.png"
+          alt="logo"
+          width={200}
+          height={200}
+          className="w-28 h-28 cursor-pointer"
+        />
+      </Link>
       <div className=" h-full flex">
         <Block title={"Become a member"} para={"Additional 0% off on stays."} />
         <Block
