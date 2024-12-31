@@ -1,14 +1,53 @@
-import Head from 'next/head'
-import React from 'react'
+"use client";
+import Head from "next/head";
+import { useState } from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [login, setLogin] = useState(false);
+
+  const router = useRouter();
+
+  const handleSignup = async () => {
+    const res = await axios.post(`/api/user/register`, {
+      name,
+      email,
+      password,
+    });
+    if (res?.data) {
+      Cookies.set("user", res.data.token, { expires: 7 });
+      alert(res.data.msg);
+      router.back();
+    }
+  };
+
+  const handleToggle = () => {
+    setLogin(!login);
+  };
+
+  const handleLogin = async () => {
+    const res = await axios.post(`/api/user/login`, {
+      email,
+      password,
+    });
+    if (res?.data) {
+      Cookies.set("user", res.data.token, { expires: 7 });
+      alert(res.data.msg);
+      router.back();
+    }
+  };
+
   return (
     <div>
-       <Head>
-        <title>OYO - Login & SignUp</title>
-       </Head>
-
-       <div className="flex h-screen justify-center items-center relative bg-login-background bg-no-repeat bg-cover opacity-85">
+      <Head>
+        <title>OYO - Login !</title>
+      </Head>
+      <div className="flex h-screen justify-center items-center relative bg-login-background bg-no-repeat bg-cover opacity-85">
         <div className=" absolute w-full top-10 px-20 flex items-center text-white">
           <h2 className="text-5xl font-bold mr-5">OYO</h2>
           <p className=" font-bold text-2xl  ">
@@ -35,7 +74,7 @@ const Login = () => {
               <p className=" font-bold text-lg mb-1">
                 Please enter your phone number to continue
               </p>
-              {/* {login ? (
+              {login ? (
                 ""
               ) : (
                 <input
@@ -77,13 +116,13 @@ const Login = () => {
                   {" "}
                   {login ? "Sign Up" : "Login"}
                 </span>
-              </p> */}
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
