@@ -18,7 +18,7 @@ const Home = () => {
       <Header1 />
       <Header2/>
       <Header3/>
-      <div className="mx-20">
+      {/* <div className="mx-20">
         <div className="my-14">
           <Image
             src={"/Banner1.png"}
@@ -38,7 +38,29 @@ const Home = () => {
           />
         </div>
         <Header4/>
-      </div>
+      </div> */}
+      <div className="px-4 lg:mx-20">
+  <div className="my-8">
+    <Image
+      src={"/Banner1.png"}
+      alt="banner1"
+      width={1920}
+      height={320}
+      className="h-auto w-full rounded-lg shadow-md lg:w-[95%] lg:mx-auto"
+    />
+  </div>
+  <div className="mb-8">
+    <Image
+      src={"/banner2.avif"}
+      alt="banner2"
+      width={1920}
+      height={320}
+      className="h-auto w-full rounded-lg shadow-md lg:w-[95%] lg:mx-auto"
+    />
+  </div>
+  <Header4 />
+</div>
+
       <Footer/>
     </div>
   )
