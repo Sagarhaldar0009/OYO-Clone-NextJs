@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-const Block = ({title , para}) => {
+const Block = ({title , para, img}) => {
   return (
     <div className=" border-r border-gray-300 w-60 h-full flex items-center px-3">
       <Image
-        src={"/demo.svg"}
+        src={img}
         alt="demo"
         width={200}
         height={200}
